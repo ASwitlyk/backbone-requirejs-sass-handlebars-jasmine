@@ -1,4 +1,4 @@
 # files for git to ignore
-node_modules
-.sass-cache
+#node_modules
+#.sass-cache
 readme.txt
