@@ -9,13 +9,31 @@
 
   <script src="../lib/jasmine-2.1.3/jasmine.js"></script>
   <script src="../lib/jasmine-2.1.3/jasmine-html.js"></script>
-  <script src="../lib/jasmine-2.1.3/boot.js"></script>
+  <script src="boot-without-onload.js"></script>
+  <!-- RequireJS for AMD -->
 
-  <!-- include source files here... -->
-  <script src="../src/index.js"></script>
+  <script src="../node_modules/requirejs/require.js"></script>
+  <!-- RequireJS config -->
+  <script scr="../src/requirejsConfig.js"></script>
 
-  <!-- include spec files here... -->
-  <script src="spec/test.js"></script>
+  <script type="text/javascript">
+
+    require([
+      // add configuration
+      '../src/requirejsConfig.js',
+      // test spec gives an example of how to load requireJS modules
+      // with Jasmine 2.0+
+      'spec/test',
+      // Add your specs below here:
+      ], function() {
+        // need to wait until all specs are loaded before executing the tests
+        // Jasmine usually runs all tests on window.onload but changed boot.js above
+        // and using boot-without-onload.js so you can now manually run the tests after
+        // AMD modules loaded
+      window.executeTests();
+    });
+
+  </script>
 
 </head>
 
