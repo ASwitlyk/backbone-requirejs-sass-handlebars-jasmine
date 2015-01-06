@@ -28,7 +28,7 @@ Clone the repository and cd into the cloned directory. Install the dependencies 
 ## Usage
 
 For development:
-* `npm run dev`  This will watch the src/sass and src/templates directory for changes and precompile any changed or new files/folders
+* `npm run dev`  This will watch the src/sass and src/templates directories for changes and precompile any changed or new files/folders
 
 There is currently no server included with this scaffolding so you the entry point is currently just index.html.
 
@@ -54,7 +54,7 @@ For efficiency, the Handlebars templates are precompiled into javascript code. T
 
 #### Example Templating Usage
 
-Utilize the example template **example.hbs*** residing within src/templates/example.hbs with requireJS syntax by first making sure the template is precompiled (if in dev mode this will be done for you or you can manually precompile templates by running `npm run handlebars-precompile` on the CLI). Then use precompiled template:
+Utilize the example template **example.hbs** residing within src/templates/example.hbs with requireJS syntax by first making sure the template is precompiled (if in dev mode this will be done for you or you can manually precompile templates by running `npm run handlebars-precompile` on the CLI). Then use precompiled template:
 
 ```
 require(['template'], function(template) {
